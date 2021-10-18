@@ -20,7 +20,17 @@
 
             </ul>
           </li>
-          <li></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" *ngIf="!accountService.loggedIn()" [routerLink]="['/login']">Entrar</a></li>
+              <li><a class="dropdown-item" *ngIf="accountService.loggedIn()" [routerLink]="['/dashboard']">Minha Conta</a></li>
+              <li><a class="dropdown-item" *ngIf="accountService.loggedIn()" (click)="accountService.logout()">Sair</a></li>
+            </ul>
+          </li>
+          
         </ul>
         
         <!--SearchBar-->
@@ -36,15 +46,11 @@
             <i class="bi bi-person-circle"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item"  (click)="logout()">Sair</a></li>
-            
-
+            <li><a class="dropdown-item" *ngIf="!accountService.loggedIn()" [routerLink]="['/login']">Entrar</a></li>
+            <li><a class="dropdown-item" *ngIf="accountService.loggedIn()" [routerLink]="['/dashboard']">Minha Conta</a></li>
+            <li><a class="dropdown-item" *ngIf="accountService.loggedIn()" (click)="accountService.logout()">Sair</a></li>
           </ul>
         </li>
-        <button type="button" class="btn">
-            <i class="bi bi-person-circle"></i>
-        </button>
-
       </div>
     </div>
   </nav>

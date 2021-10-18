@@ -75,6 +75,7 @@ export class LoginComponent implements OnInit {
       this.accountService.login(this.f.email.value, this.f.password.value)
         .subscribe(res=>{
         console.log(res)
+        // Armazenar Token
         localStorage.setItem('token', res.token)
         // localStorage.setItem('nome', res.nome)
         // localStorage.setItem('email', res.email)

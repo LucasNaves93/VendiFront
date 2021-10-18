@@ -7,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent  {
   user: User;
 
   constructor(private accountService: AccountService) {
-    this.user = this.accountService.userValue;
+    // this.user = this.accountService.userValue;
    }
 
-  ngOnInit(): void {
-  }
+
+  
 
 }
